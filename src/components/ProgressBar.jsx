@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import "../App.css";
 import { MAX, MIN } from "../constants";
 
-const ProgressBar = ({ value = 0,onComplete=()=>{} }) => {
+const ProgressBar = ({ value = 0, onComplete = () => {} }) => {
   const [percent, setPercent] = useState(value);
   useEffect(() => {
     setPercent(Math.min(MAX, Math.max(value, MIN)));
-    if(value>=MAX){
+    if (value >= MAX) {
       onComplete();
     }
   }, [value]);
